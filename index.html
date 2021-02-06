@@ -48,10 +48,10 @@ function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
         .setContent("why would you click on " + e.latlng.toString()"?")
-        .openOn(mymap);
+        .openOn(map);
 }
 
-mymap.on('click', onMapClick);
+map.on('click', onMapClick);
     
   /* Display a point marker with pop-up text */
   L.marker([41.77, -72.69]).addTo(map) // EDIT coordinates to re-position marker
@@ -65,7 +65,7 @@ var polygon = L.polygon([
     
 var popup = L.popup()
     .setLatLng([51.5, -0.09])
-    .setContent("Go to Hell!")
+    .setContent("Go to Hell!2")
     .openOn(map);    
     
   </script>
