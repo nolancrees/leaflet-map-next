@@ -40,6 +40,19 @@
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map);
 
+    /* this is some king of popup event alert */
+  
+  var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("why would you click on " + e.latlng.toString()"?")
+        .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);
+    
   /* Display a point marker with pop-up text */
   L.marker([41.77, -72.69]).addTo(map) // EDIT coordinates to re-position marker
   .bindPopup("What am I doing here?"); // EDIT pop-up text message
