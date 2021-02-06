@@ -41,14 +41,14 @@
   }).addTo(map);
 
   
-  /* Display data from a geojson file */
+  /* Display data from a geojson file 
   $.getJSON("map.geojson",function(data){
     L.geoJson(data, {
       pointToLayer: function(feature,latlng){
         var marker = L.marker(latlng);
         return marker;
       }
-    }).addTo(map);  
+    }).addTo(map);  */
     
   /* Display a point marker with pop-up text */
  
