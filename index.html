@@ -42,16 +42,17 @@
 
   /* Display a point marker with pop-up text */
   L.marker([41.77, -72.69]).addTo(map) // EDIT coordinates to re-position marker
-  .bindPopup("Insert pop-up text here"); // EDIT pop-up text message
+  .bindPopup("What am I doing here?"); // EDIT pop-up text message
 var polygon = L.polygon([
     [51.509, -0.08],
     [51.503, -0.06],
     [51.51, -0.047]
 ]).addTo(map);
-   
+   polygon.bindPopup("I am a polygon.");
+    
 var popup = L.popup()
     .setLatLng([51.5, -0.09])
-    .setContent("I am a standalone popup.")
+    .setContent("Go to Hell!")
     .openOn(map);    
     
   </script>
