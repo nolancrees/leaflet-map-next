@@ -31,8 +31,8 @@
 
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
-    center: [51.505, -0.09], // EDIT coordinates to re-center map
-    zoom: 13,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    center: [42.491593734102885, -96.3991374687283], // EDIT coordinates to re-center map
+    zoom: 9,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
   });
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
@@ -40,23 +40,19 @@
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map);
 
-    /* this is some kind of popup event alert */
-
-map.on('click', onMapClick);
+  
+  /* Display data from a geojson file */
+  $.getJSON("map.geojson",function(data){
+    L.geoJson(data, {
+      pointToLayer: function(feature,latlng){
+        var marker = L.marker(latlng);
+        return marker;
+      }
+    }).addTo(map);  
     
   /* Display a point marker with pop-up text */
-  L.marker([41.77, -72.69]).addTo(map) // EDIT coordinates to re-position marker
-  .bindPopup("What am I doing here?"); // EDIT pop-up text message
- L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(map).bindPopup("I am a polygon.");
+ 
     
-var popup = L.popup()
-    .setLatLng([51.5, -0.09])
-    .setContent("Go to Hell!")
-    .openOn(map);    
     
   </script>
 </body>
