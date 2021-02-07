@@ -32,7 +32,7 @@
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
     center: [41.928915, -93.405451], // EDIT coordinates to re-center map
-    zoom: 7.5,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    zoom: 8,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
   });
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
@@ -45,7 +45,59 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenSt
   });
     
   /* Display a point marker with pop-up text */
- 
+ {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "west"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.44811630249022,
+          42.50956476517422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "north"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.38940811157227,
+          42.543342529184336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "name": "east"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.3394546508789,
+          42.45158134994722
+        ]
+      }
+    }
+  ]
+}
     
     
   </script>
